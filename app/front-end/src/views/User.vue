@@ -11,7 +11,7 @@ export default {
   async created() {
     const { data } = await this.axios.get('/api/user/' + this.$route.params.id)
 
-    console.log(data)
+    // console.log(data)
     this.user = data
   }
 }
