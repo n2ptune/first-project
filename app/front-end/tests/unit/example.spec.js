@@ -1,12 +1,11 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+import { mount } from '@vue/test-utils'
+import ExampleComponent from '@/components/Example.vue'
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    });
-    expect(wrapper.text()).toMatch(msg);
-  });
-});
+test('Correct rendering for Example Component', () => {
+  const cmp = mount(ExampleComponent, {
+    propsData: {
+      message: 'Example'
+    }
+  })
+  expect(cmp.props().message).toBe('Example')
+})
