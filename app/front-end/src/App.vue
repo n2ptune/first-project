@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <Example :message="message" />
+  <div class="root">
+    <router-view />
   </div>
 </template>
 
 <script>
 export default {
-  components: {
-    Example: () => import('@/components/Example.vue')
-  },
-
   data: () => ({
     message: 'Example'
   })
 }
 </script>
+
+<style scoped>
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+</style>
